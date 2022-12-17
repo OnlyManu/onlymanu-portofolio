@@ -112,7 +112,7 @@ export default function Home() {
                 <title>{ "OnlyManu Portofolio" }</title>
                 <meta
                     name="description"
-                    content="Freelancer web developer portofolio"
+                    content="Onlymanu portofolio - freelance developer"
                 />
             </Head>
             <div id="loader">

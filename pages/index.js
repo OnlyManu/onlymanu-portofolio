@@ -114,6 +114,7 @@ export default function Home() {
                     name="description"
                     content="Onlymanu portofolio - freelance developer"
                 />
+                <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
             </Head>
             <div id="loader">
                 <div className={styles.spinner}></div>

@@ -35,7 +35,8 @@
 }
 .license{
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
+  color: var(--color-gray);
 }
 .spinner{
   position: relative;

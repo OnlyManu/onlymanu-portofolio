@@ -23,7 +23,6 @@ const generateFormData = () => {
     return fieldsValues;
 }
 
-
 const generateErrorStatus = () => {    
     let fieldsErrorStatus = {}
     fields.forEach(field => {

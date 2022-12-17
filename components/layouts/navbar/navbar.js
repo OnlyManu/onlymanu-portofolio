@@ -55,6 +55,7 @@ export default function Navbar() {
             }
         }, false)
     }, [])
+    
     return (
         <div className={styles.navbar} id="navbar">
             <a href="#">

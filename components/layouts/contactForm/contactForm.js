@@ -100,7 +100,6 @@ export default function ContactForm() {
                 values[input] ? setInputError(input, false, '') : (setInputError(input, true, 'this field is required'), isError = true)
             }
         })
-
         return !isError
     }
 

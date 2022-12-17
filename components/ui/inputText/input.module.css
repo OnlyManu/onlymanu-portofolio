@@ -1,0 +1,27 @@
+.input{
+    border: none;
+    background-color: #d3d3d3;
+    width: 100%;
+    padding: 0.2rem;
+    height: 2.6rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+.input:focus{
+    border: none;
+    outline: none;
+}
+.input:focus-visible{
+    border: none;
+    outline: var(--color-blue) solid 2px;
+}
+
+@media screen and (min-width: 1024px) {
+    .input{
+        height: 7vh;
+        font-size: 0.65rem;
+    }
+    .input:focus-visible{
+        outline: var(--color-blue) solid 3px;
+    }
+}

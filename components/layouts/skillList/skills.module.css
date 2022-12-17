@@ -1,0 +1,36 @@
+.skills{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-gap: 0.2rem;
+}
+.skill{
+    display: flex;
+    cursor: default;
+}
+.skillIcon{
+    width: 100%;
+    height: auto;
+    transition: transform 1s;
+}
+.skillIcon:hover{
+    transform: translateY(-0.4rem);
+}
+.skillIcon path{
+    fill: #d3d3d3;
+}
+.more{
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    color: #d3d3d3;
+}
+
+@media screen and (min-width: 1024px) {
+    .more{
+        font-size: 1.1rem;
+    }
+}

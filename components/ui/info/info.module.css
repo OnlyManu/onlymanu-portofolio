@@ -1,0 +1,27 @@
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+.name{
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+.content{
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #bdbdbd;
+}
+
+@media screen and (min-width: 1024px) {
+    .info{
+        width: fit-content;
+        gap: 0.01rem
+    }
+    .name{
+        font-size: 1.45vw;
+    }
+    .content{
+        font-size: 1.45vw;
+    }
+}

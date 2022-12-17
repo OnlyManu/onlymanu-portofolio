@@ -1,0 +1,85 @@
+.project{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+.project:hover .screenshot{
+    transform: scale(1.1);
+}
+.project:hover .projectName::after{
+    width: 100%;    
+}
+.project:hover .moreIcon{
+    animation: more .8s ease;
+}
+.screenshotContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    overflow: hidden;
+}
+.screenshot{
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s;
+}
+.projectInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.projectName{
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+}
+.projectName::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(2px);
+    width: 0px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.4s;
+}
+.knowMore{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+.moreIcon{
+    width: 1.4rem;
+    height: auto;
+}
+
+@keyframes more {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(0.3rem);
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .screenshotContainer{
+        padding: 2rem 2rem;       
+    }
+    .projectInfo{
+        gap: 0.1rem;
+    }
+    .moreIcon{
+        width: 1rem;
+    }
+}

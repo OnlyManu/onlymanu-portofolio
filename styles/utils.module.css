@@ -1,0 +1,124 @@
+.bgColorDark{
+    background-color: var(--color-dark-blue);
+}
+.bgColorLight{
+    background-color: var(--color-light-blue);
+}
+.bgColorBlue{
+    background-color: var(--color-blue);
+}
+.colorBlue{
+    color: var(--color-blue);
+}
+.colorDarkBlue{
+    color: var(--color-dark-blue);
+}
+.colorLightBlue{
+    color: var(--color-light-blue);
+}
+.colorWhite{
+    color: var(--color-white);
+}
+.colorGray{
+    color: var(--color-gray);
+}
+.svgColorBlue path{
+    fill: var(--color-blue);
+}
+.svgColorWhite path{
+    fill: var(--color-white);
+}
+.svgColorGray path{
+    fill: var(--color-gray);
+}
+.svgColorRed path{
+    fill: var(--color-red);
+}
+.headingCard{
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.headingCard2{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.textCard{
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.textCardLink{
+    font-size: 1rem;
+}
+.textBio{
+    font-size: 0.9rem;
+}
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+.inputGroupError input, .inputGroupError textarea{
+    outline: var(--color-red) solid 2px;
+}
+.inputLabel{
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: translateX(4px);
+}
+.inputError{
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-red);
+}
+.errorIcon{
+    width: 1rem;
+    height: auto;
+}
+.errorIcon path{
+    fill: var(--color-red)
+}
+.pSkills{
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+}
+@media screen and (min-width: 1024px) {
+    .textCard{
+        font-size: 0.7rem;
+    }
+    .textCardLink{
+        font-size: 0.8rem;
+    }
+    .textBio{
+        font-size: 1.45vw;
+    }
+    .headingCard{
+        font-size: 0.8rem;
+    }
+    .headingCard2{
+        font-size: 0.9rem;
+    }
+    .inputGroup{
+        gap: 0.4rem;
+        width: 100%;
+    }
+    .inputLabel{
+        font-size: 0.7rem;
+    }
+    .inputError{
+        font-size: 0.7rem;
+    }
+    .errorIcon{
+        width: 0.8rem;
+        height: auto;
+    }
+    .pSkills{
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+}

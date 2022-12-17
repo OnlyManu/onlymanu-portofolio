@@ -1,0 +1,19 @@
+.socials{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 0.6rem;
+}
+.socialLink{
+    display: flex;
+    text-decoration: none;
+    transition: transform .1s;
+}
+.socialLink:hover{
+    transform: translateY(-0.1rem);
+}
+.socialIcon{
+    width: 1.5rem;
+    height: auto;
+}

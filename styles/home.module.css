@@ -1,0 +1,98 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.header{
+  position: relative;
+  display: flex;
+  flex-direction: column;  
+  height: 102vh;
+  background: linear-gradient(to right,rgba(27, 38, 45, 0.8), rgba(27, 38, 45, 0.8)),url("/images/heroImage.jpg") top center/cover no-repeat;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  overflow: hidden;
+}
+.section{
+  padding-top: 2rem;
+  padding-bottom: 2.3rem;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.footer{
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 6vw;
+}
+.license{
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.spinner{
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--color-blue);
+  border-bottom-color: var(--color-blue);
+  animation: loading1 2s linear infinite;
+}
+.spinner::after{
+  content: "";
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--color-blue);
+  border-bottom-color: var(--color-blue);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  animation: loading2 1s linear infinite;
+}
+
+@keyframes loading1 {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading2 {
+  0%{
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100%{
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header{
+    height: 102vh;
+  }
+  .section{
+    padding-left: 8vw;
+    padding-right: 8vw;
+    padding-top: 2.3rem;
+    padding-bottom: 2.6rem;
+    gap: 2.3rem;   
+  }
+  .footer{
+    padding: 0px 8vw;
+    height: 2.8rem;   
+  }
+}

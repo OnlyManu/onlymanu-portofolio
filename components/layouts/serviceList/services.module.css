@@ -1,0 +1,46 @@
+.services{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  justify-items: center;
+  grid-gap: 2rem;
+  width: 100%;
+}
+.cardIcon{
+  width: 48px;
+  height: 48px;
+}
+.cardIcon rect, .cardIcon polygon{
+  fill: transparent;
+}
+.service{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  .cardIcon{
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .services{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.8rem;   
+  }
+  .cardIcon{
+    width: 72px;
+    height: 72px;
+  }
+  .service:first-child{
+      order: 1;
+  }
+  .service:last-child{
+      order: 2;
+  }
+}

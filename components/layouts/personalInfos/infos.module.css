@@ -1,0 +1,62 @@
+.aboutMe{
+    display: grid;
+    grid-template-columns: 45% 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "picture infos"
+                         "bio bio";
+    grid-gap: 1.5rem;
+    column-gap: 0.9rem;
+}
+.picture{
+    display: flex;
+    grid-area: picture;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.profilePicture{
+    width: 100%;
+    height: auto;
+}
+.infos{
+    align-self: flex-end;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: space-between;
+    grid-area: infos;
+    height: 100%;
+}
+.bio{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-area: bio;
+}
+.bio p{
+    word-wrap: break-word;
+}
+.greeting{
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .aboutMe{
+        grid-template-columns: 38.8% 1fr;
+        grid-template-areas: "picture bio"
+                             "picture infos";
+        column-gap: 1.2rem;
+        row-gap: 0;
+    }
+    .infos{
+        width: 100%;
+        height: fit-content;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        row-gap: 0.8rem;
+    }
+    .bio{
+        gap: 0.4rem;
+    }
+    .greeting{
+        font-size: 1.45vw;
+    }
+}

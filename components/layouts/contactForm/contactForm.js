@@ -10,17 +10,17 @@ import utils from '../../../styles/utils.module.css'
 
 
 const fields = [
-    {field:"text", name: "name", type:"text", value: ""},
-    { field: "text", name: "email", type: "email", value: "" },
-    {field:"textarea", name: "message", value: ""}
+    {field:"text", name: "name", type:"text"},
+    { field: "text", name: "email", type: "email"},
+    {field:"textarea", name: "message"}
 ]
 
 const generateFormData = () => {
     let fieldsValues = {}
     fields.forEach(field => {
-        fieldsValues[field.name] = field.value
+        fieldsValues[field.name] = ""
     })
-    return {values: fieldsValues};
+    return fieldsValues;
 }
 
 
@@ -32,10 +32,12 @@ const generateErrorStatus = () => {
     return fieldsErrorStatus
 }
 
+const initialDataState = { values: generateFormData() }
+const initialErrorState = generateErrorStatus()
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState(generateFormData())
-    const [errors, setError] = useState(generateErrorStatus())
+    const [formData, setFormData] = useState(initialDataState)
+    const [errors, setError] = useState(initialErrorState)
     const [alertState, setAlertState] = useState(false)
 
     const { values, isLoading } = formData
@@ -72,6 +74,7 @@ export default function ContactForm() {
         if (verifyFormData()) {
             const response = await sendMail(values)
             if (response === 'success') {
+                resetFormData()
                 openCloseAlert()                
             }   
         }
@@ -100,6 +103,14 @@ export default function ContactForm() {
         })
 
         return !isError
+    }
+
+    const resetFormData = () => {
+        const resetValues = generateFormData()
+        setFormData((prev) => ({
+            ...prev,
+            values: resetValues
+        }))
     }
 
     return (

@@ -15,7 +15,7 @@ export default function PersonalInfos() {
     return (
         <div className={styles.aboutMe}>
             <div className={styles.picture} data-aos="fade-right">
-                <Image src='/images/photo1.png' className={styles.profilePicture} height={602} width={476} alt='Onlymanu profile picture' />
+                <Image src='/images/profile.png' className={styles.profilePicture} height={602} width={476} alt='Onlymanu profile picture' />
             </div>
             <div className={styles.infos} data-aos="fade-left">
                 <Info name="Name" content="Emmanuel Bli" />

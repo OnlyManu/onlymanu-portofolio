@@ -5,6 +5,13 @@ import styles from './infos.module.css'
 import utils from '../../../styles/utils.module.css'
 
 export default function PersonalInfos() {
+    const getAge = () => {
+        const birth = new Date("1997-05-24").getTime()
+        const now = new Date().getTime()
+        const interval = now - birth
+        const age = Math.floor(interval / (1000 * 3600 * 24 * 365))
+        return age
+    }
     return (
         <div className={styles.aboutMe}>
             <div className={styles.picture} data-aos="fade-right">
@@ -12,7 +19,7 @@ export default function PersonalInfos() {
             </div>
             <div className={styles.infos} data-aos="fade-left">
                 <Info name="Name" content="Emmanuel Bli" />
-                <Info name="Age" content="25" />
+                <Info name="Age" content={getAge()} />
                 <Info name="Email" content="devonlymanu@gmail.com" />
                 <Info name="Phone" content="(+225) 01 711 93 710" />
             </div>

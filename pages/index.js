@@ -114,7 +114,20 @@ export default function Home() {
                     name="description"
                     content="Onlymanu portofolio - freelance developer"
                 />
-                <link rel="shortcut icon" href="/images/favicon.ico"/>
+                <meta
+                    property="og:title"
+                    content="OnlyManu : Freelance Developer"
+                />
+                <meta
+                    property="og:url"
+                    content="https://onlymanu.vercel.app"
+                />
+                <meta
+                    property="og:image"
+                    content="https://onlymanu.vercel.app/images/site-banner.png"
+                />
+                <link rel="shortcut icon" href="/images/favicon.ico" />
+                
             </Head>
             <div id="loader">
                 <div className={styles.spinner}></div>

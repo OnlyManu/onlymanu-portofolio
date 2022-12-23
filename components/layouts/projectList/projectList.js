@@ -8,7 +8,7 @@ const projects = [
         href: "https://youtu.be/WF3_Zc_g33A",
     },
     {
-        name: "Eddie Landing page",
+        name: "Edie Landing page",
         image: "/images/project02.png",
         href: "https://onlymanu-edie-homepage.netlify.app/",
     },

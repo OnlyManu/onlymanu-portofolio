@@ -36,7 +36,7 @@ export default function Home() {
     }, [])
     
     const particlesOptions = {
-        fpsLimit: 120,
+        fpsLimit: 820,
         interactivity: {
             events: {
                 onClick: {
@@ -80,7 +80,7 @@ export default function Home() {
                     default: "bounce",
                 },
                 random: false,
-                speed: 3,
+                speed: 2,
                 straight: false,
             },
             number: {

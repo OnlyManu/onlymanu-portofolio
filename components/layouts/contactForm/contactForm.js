@@ -91,7 +91,7 @@ export default function ContactForm() {
         inputs.forEach(input => {
             if (input === 'email') {
                 if (values[input]) {
-                    /^.+@.+\..{2,4}$/.test(values[input]) ? setInputError(input, false, '') : (setInputError(input, true, 'enter a correct email adress'), isError = true)
+                    /^.+@\w+\.\w{2,8}$/.test(values[input]) ? setInputError(input, false, '') : (setInputError(input, true, 'enter a correct email adress'), isError = true)
                 } else {
                     setInputError(input, true, 'this field is required')
                     isError = true

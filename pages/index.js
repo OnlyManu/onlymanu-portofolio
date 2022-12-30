@@ -163,7 +163,7 @@ export default function Home() {
                     <ContactForm/>
                 </section>
             </main>
-            <footer className={styles.footer+" "+utils.bgColorLight}>
+            <footer className={styles.footer}>
                 <div className={styles.license}>©copyright 2022 OnlyManu</div>
                 <SocialLinks/>
             </footer>

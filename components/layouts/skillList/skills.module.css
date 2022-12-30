@@ -10,14 +10,12 @@
 .skill{
     display: flex;
     cursor: default;
+    animation: bouncemobile 2s ease-in-out alternate infinite;
+    animation-delay: calc(0.2s * var(--i));
 }
 .skillIcon{
     width: 100%;
     height: auto;
-    transition: transform 1s;
-}
-.skillIcon:hover{
-    transform: translateY(-0.4rem);
 }
 .skillIcon path{
     fill: #d3d3d3;
@@ -29,8 +27,29 @@
     color: #d3d3d3;
 }
 
+@keyframes bouncemobile {
+    from{
+        transform: translateY(0.3rem);
+    }
+    to{
+        transform: translateY(-0.3rem);
+    }
+}
+@keyframes bouncedesktop {
+    from{
+        transform: translateY(0.5rem);
+    }
+    to{
+        transform: translateY(-0.5rem);
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .more{
         font-size: 1.1rem;
+    }
+    .skill{
+        animation: bouncedesktop 2s ease-in-out alternate infinite;
+        animation-delay: calc(0.2s * var(--i));
     }
 }

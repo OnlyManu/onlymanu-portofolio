@@ -7,9 +7,9 @@ export default function CardProject({ href, name, image, indice }) {
 
     return (
         <div className={styles.project} data-aos={animation} data-aos-easing="ease-out">
-            <div className={styles.screenshotContainer+" "+utils.bgColorLight}>
+            <a className={styles.screenshotContainer+" "+utils.bgColorLight} href={href} target="_blank" rel='noreferrer'>
                 <Image className={styles.screenshot} src={image} width={720} height={434} alt=''/>
-            </div>
+            </a>
             <div className={styles.projectInfo}>
                 <span className={styles.projectName+" "+utils.headingCard2}>{name}</span>
                 <a className={styles.knowMore + " " + utils.textCardLink + " " + utils.colorBlue} href={href} target="_blank" rel='noreferrer'>

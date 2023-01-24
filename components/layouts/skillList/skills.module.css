@@ -45,6 +45,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .skills{
+        grid-gap: 0.8rem;
+    }
     .more{
         font-size: 1.1rem;
     }

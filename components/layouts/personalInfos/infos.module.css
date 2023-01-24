@@ -12,6 +12,7 @@
     grid-area: picture;
     border-radius: 5px;
     overflow: hidden;
+    outline: 2px solid var(--color-blue);
 }
 .profilePicture{
     width: 100%;

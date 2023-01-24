@@ -86,9 +86,9 @@ export default function Home() {
             number: {
                 density: {
                     enable: true,
-                    area: 800,
+                    area: 900,
                 },
-                value: 80,
+                value: 60,
             },
             opacity: {
                 value: 0.3,

@@ -25,33 +25,31 @@ export default function Navbar() {
             const sections = document.querySelectorAll('section')
             const links = document.querySelectorAll('nav li a')
             const navbar = document.getElementById('navbar')
-            const burgerButton = document.getElementById('burger-button')
-            if (getComputedStyle(burgerButton, null).display === 'none') {
-                window.scrollY > 20 ? navbar.classList.add('sticky') : navbar.classList.remove('sticky')
+            
+            window.scrollY > 250 ? navbar.classList.add('sticky') : navbar.classList.remove('sticky')
 
-                let top = window.scrollY;
-                let offset = home.offsetTop-150;
-                let height = home.offsetHeight;
-                let id = home.getAttribute('id');
+            let top = window.scrollY;
+            let offset = home.offsetTop-150;
+            let height = home.offsetHeight;
+            let id = home.getAttribute('id');
 
-                if (top >= offset && top < offset + height) { 
-                    links.forEach(link => {
-                        link.getAttribute('href') === '#'+id ? link.parentNode.classList.add('active') : link.parentNode.classList.remove('active')
-                    })
-                } else {
-                    sections.forEach(section => {
-                        top = window.scrollY;
-                        offset = section.offsetTop-150;
-                        height = section.offsetHeight;
-                        id = section.getAttribute('id');
+            if (top >= offset && top < offset + height) { 
+                links.forEach(link => {
+                    link.getAttribute('href') === '#'+id ? link.parentNode.classList.add('active') : link.parentNode.classList.remove('active')
+                })
+            } else {
+                sections.forEach(section => {
+                    top = window.scrollY;
+                    offset = section.offsetTop-150;
+                    height = section.offsetHeight;
+                    id = section.getAttribute('id');
 
-                        if (top >= offset && top < offset + height) {
-                            links.forEach(link => {
-                                link.getAttribute('href') === '#'+id ? link.parentNode.classList.add('active') : link.parentNode.classList.remove('active')
-                            })
-                        }
-                    })
-                }
+                    if (top >= offset && top < offset + height) {
+                        links.forEach(link => {
+                            link.getAttribute('href') === '#'+id ? link.parentNode.classList.add('active') : link.parentNode.classList.remove('active')
+                        })
+                    }
+                })
             }
         }, false)
     }, [])
@@ -62,8 +60,8 @@ export default function Navbar() {
                 <Image
                     className={styles.logo}
                     src="/images/logo-name.svg"
-                    width={126}
-                    height={24}
+                    width={124}
+                    height={41.89}
                     alt=""
                     priority={true}
                 />

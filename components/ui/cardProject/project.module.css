@@ -74,7 +74,7 @@
 
 @media screen and (min-width: 1024px) {
     .screenshotContainer{
-        padding: 2rem 2rem;       
+        padding: 1.5rem 1.5rem;       
     }
     .projectInfo{
         gap: 0.1rem;

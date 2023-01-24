@@ -55,6 +55,7 @@
     font-size: 0.9rem;
 }
 .inputGroup{
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -69,10 +70,13 @@
     transform: translateX(4px);
 }
 .inputError{
+    position: absolute;
+    top: 2px;
+    right: 0;
     display: flex;
     gap: 0.2rem;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 400;
     color: var(--color-red);
 }
@@ -87,31 +91,32 @@
     padding-left: 2vw !important;
     padding-right: 2vw !important;
 }
+
 @media screen and (min-width: 1024px) {
     .textCard{
-        font-size: 0.7rem;
+        font-size: 1.36vw;
     }
     .textCardLink{
-        font-size: 0.8rem;
+        font-size: 1.38vw;
     }
     .textBio{
-        font-size: 1.45vw;
+        font-size: 1.36vw;
     }
     .headingCard{
-        font-size: 0.8rem;
+        font-size: 1.40vw;
     }
     .headingCard2{
-        font-size: 0.9rem;
+        font-size: 1.6vw;
     }
     .inputGroup{
         gap: 0.4rem;
         width: 100%;
     }
     .inputLabel{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     .inputError{
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
     .errorIcon{
         width: 0.8rem;

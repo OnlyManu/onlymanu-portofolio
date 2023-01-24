@@ -3,9 +3,9 @@ import styles from './projects.module.css'
 
 const projects = [
     {
-        name: "Smart Report",
+        name: "Manage Landing page",
         image: "/images/project01.png",
-        href: "https://youtu.be/WF3_Zc_g33A",
+        href: "https://onlymanu-manage-landing-page.vercel.app",
     },
     {
         name: "Edie Landing page",

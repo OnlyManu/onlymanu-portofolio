@@ -51,6 +51,9 @@
 .textCardLink{
     font-size: 1rem;
 }
+.textCardSkill {
+    font-size: 1.1rem;
+}
 .textBio{
     font-size: 0.9rem;
 }
@@ -87,10 +90,6 @@
 .errorIcon path{
     fill: var(--color-red)
 }
-.pSkills{
-    padding-left: 2vw !important;
-    padding-right: 2vw !important;
-}
 
 @media screen and (min-width: 1024px) {
     .textCard{
@@ -98,6 +97,9 @@
     }
     .textCardLink{
         font-size: 1.38vw;
+    }
+    .textCardSkill {
+        font-size: 1.60vw;
     }
     .textBio{
         font-size: 1.36vw;
@@ -121,9 +123,5 @@
     .errorIcon{
         width: 0.8rem;
         height: auto;
-    }
-    .pSkills{
-        padding-left: 8vw;
-        padding-right: 8vw;
     }
 }

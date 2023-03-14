@@ -1,58 +1,53 @@
 .skills{
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    grid-gap: 0.2rem;
+    grid-gap: 1rem;
 }
+
 .skill{
     display: flex;
+    align-items: center;
+    background-color: var(--color-skill-background);
+    height: 3.6rem;
+    padding: 0 1rem;
+    border-radius: 6px;
+    gap: 1.5rem;
     cursor: default;
-    animation: bouncemobile 2s ease-in-out alternate infinite;
-    animation-delay: calc(0.2s * var(--i));
+    transition: all .3s;
 }
-.skillIcon{
+.skill:hover {
+    background-color: var(--color-blue);
+}
+.skill:hover .icon path {
+    fill: var(--color-white);
+}
+
+.skillIcon {
+    display: flex;
+    width: 2.2rem;
+}
+.icon{
     width: 100%;
     height: auto;
 }
-.skillIcon path{
-    fill: #d3d3d3;
-}
-.more{
-    text-align: center;
-    font-size: 0.8rem;
-    line-height: 0.8rem;
-    color: #d3d3d3;
+.icon path{
+    fill: var(--color-blue);
 }
 
-@keyframes bouncemobile {
-    from{
-        transform: translateY(0.3rem);
-    }
-    to{
-        transform: translateY(-0.3rem);
-    }
-}
-@keyframes bouncedesktop {
-    from{
-        transform: translateY(0.5rem);
-    }
-    to{
-        transform: translateY(-0.5rem);
-    }
-}
+
 
 @media screen and (min-width: 1024px) {
-    .skills{
+    .skills {
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 0.8rem;
     }
-    .more{
-        font-size: 1.1rem;
+    .skill {
+        padding: 0 0.8rem;
+        height: 4.2rem;
     }
-    .skill{
-        animation: bouncedesktop 2s ease-in-out alternate infinite;
-        animation-delay: calc(0.2s * var(--i));
+    .skillIcon {
+        width: 2rem;
     }
 }

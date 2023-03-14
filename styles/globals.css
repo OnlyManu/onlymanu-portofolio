@@ -4,9 +4,12 @@
 :root{
     --color-blue: #3282b8;
     --color-blue-transparent: hsl(204, 57%, 57%);
-    --color-light-blue: #3A474E;
+    /*--color-light-blue: #3A474E;*/
+    --color-skill-background: hsl(203, 17%, 25%); 
+    --color-light-blue: hsl(203, 22%, 21%);
     --color-dark-blue: #1a252b;
-    --color-dark:  hsla(204, 60%, 4%, 0.8);
+    /*--color-dark:  hsla(204, 60%, 4%, 0.8);*/
+    --color-dark: hsl(203, 8%, 30%);
     --color-gray: #d3d3d3;
     --color-white: #ffffff;
     --color-red: #d45858;
@@ -67,10 +70,12 @@ a {
   left: 0;
   padding-top: 0.5rem !important;
   padding-bottom: 0.4rem !important;
-  background: linear-gradient(135deg, var(--color-dark), var(--color-dark));
+  background-color: var(--color-dark);
+  /*background: linear-gradient(135deg, var(--color-dark), var(--color-dark));
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);*/
 }
+
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -94,6 +99,11 @@ a {
   .sticky{
     padding-top: 0.2rem !important;
     padding-bottom: 0rem !important;
+    padding-right: 2vw !important;
+    padding-left: 2vw !important;
+  }
+  .sticky img {
+    width: 15vw !important;
   }
   nav li{
     position: relative;

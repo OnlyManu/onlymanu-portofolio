@@ -9,6 +9,7 @@
     width: 90%;
     height: 100%;
     border-radius: 6px;
+    transition: all .3s;
 }
 .serviceSelected{
     background-color: #3282b8 !important;

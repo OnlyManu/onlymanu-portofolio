@@ -18,9 +18,9 @@ const projects = [
         href: "https://onlymanu-ecommerce-product-main-page.netlify.app/",
     },
     {
-        name: "Blogr Landing page",
+        name: "Url shortening Landing page",
         image: "/images/project04.png",
-        href: "https://onlymanu.github.io/",
+        href: "https://onlymanu-url-shorten.vercel.app/",
     },
 ]
 

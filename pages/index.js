@@ -154,7 +154,7 @@ export default function Home() {
                     <Heading>My works</Heading>
                     <ProjectList/>
                 </section>
-                <section className={styles.section+" "+utils.bgColorLight+" "+utils.pSkills} id="skills">
+                <section className={styles.section+" "+utils.bgColorLight} id="skills">
                     <Heading>My skills</Heading>
                     <SkillList/>
                 </section>

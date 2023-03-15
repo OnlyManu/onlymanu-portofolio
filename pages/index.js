@@ -80,7 +80,7 @@ export default function Home() {
                     default: "bounce",
                 },
                 random: false,
-                speed: 2,
+                speed: 1.4,
                 straight: false,
             },
             number: {

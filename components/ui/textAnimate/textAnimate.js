@@ -50,7 +50,7 @@ export default function TextAnimate() {
             } else {
                 dispatch({ type: "remove" })
             }
-        }, 120)
+        }, 100)
         return () => {
             clearInterval(timer)
         }

@@ -76,9 +76,9 @@
                              "subject subject"
                              "message message"
                              "submit submit";
-        gap: 5vh;
-        padding: 5vh;
-        width: 75%;
+        gap: 4vh;
+        padding: 4vh;
+        width: 68%;
     }
     .submitButton{
         grid-area: submit;

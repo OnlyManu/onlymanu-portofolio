@@ -9,7 +9,7 @@ const init = {
     text: titles[0],
     textLength: titles[0].length,
     letterCount: 0,
-    curText: "web developer",
+    curText: "",
     direction: "right",
 }
 
@@ -50,7 +50,7 @@ export default function TextAnimate() {
             } else {
                 dispatch({ type: "remove" })
             }
-        }, 100)
+        }, 120)
         return () => {
             clearInterval(timer)
         }

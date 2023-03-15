@@ -7,7 +7,8 @@ import styles from './navbar.module.css'
 
 export default function Navbar() {
     const [navigationStatus, setNavigationStatus] = useState(false)
-    
+    const [scrollPos, setScrollPos] = useState(0)
+
     const openCloseNavigation = () => {
         const body = document.querySelector('body')
         if (navigationStatus) {
@@ -26,7 +27,11 @@ export default function Navbar() {
             const links = document.querySelectorAll('nav li a')
             const navbar = document.getElementById('navbar')
             
-            window.scrollY > 250 ? navbar.classList.add('sticky') : navbar.classList.remove('sticky')
+            if (window.scrollY > 250 && window.scrollY < scrollPos) {
+                navbar.classList.add('sticky')
+            } else {
+                navbar.classList.remove('sticky')
+            }
 
             let top = window.scrollY;
             let offset = home.offsetTop-150;
@@ -51,8 +56,10 @@ export default function Navbar() {
                     }
                 })
             }
+
+            setScrollPos(window.scrollY)
         }, false)
-    }, [])
+    }, [scrollPos])
     
     return (
         <div className={styles.navbar} id="navbar">

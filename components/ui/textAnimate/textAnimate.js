@@ -9,7 +9,7 @@ const init = {
     text: titles[0],
     textLength: titles[0].length,
     letterCount: 0,
-    curText: "",
+    curText: "web developer",
     direction: "right",
 }
 

@@ -20,7 +20,7 @@
 @media screen and (min-width: 1024px) {
     .textarea{
         /*height: 24vh;*/
-        font-size: 0.65rem;
+        font-size: 1.4vw;
     }
     .textarea:focus-visible{
         outline: var(--color-blue) solid 3px;

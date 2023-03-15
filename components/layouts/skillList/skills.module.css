@@ -44,8 +44,9 @@
         grid-gap: 0.8rem;
     }
     .skill {
+        gap: 1.6vw;
         padding: 0 0.8rem;
-        height: 4.2rem;
+        height: 4rem;
     }
     .skillIcon {
         width: 2rem;

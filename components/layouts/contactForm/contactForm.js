@@ -11,7 +11,8 @@ import utils from '../../../styles/utils.module.css'
 
 const fields = [
     {field:"text", name: "name", type:"text"},
-    { field: "text", name: "email", type: "email"},
+    { field: "text", name: "email", type: "email" },
+    {field:"text", name: "subject", type:"text"},
     {field:"textarea", name: "message"}
 ]
 
@@ -116,6 +117,9 @@ export default function ContactForm() {
             {fields.map((field, key) => {
                 if (field.field === "textarea") {
                     return <InputTextArea key={key} name={field.name} value={values[field.name]} error={errors[field.name]} onChange={handleChange} />
+                }
+                if (field.name === "subject") {
+                    return <InputText key={key} name={field.name} type={field.type} additionnalClass={utils.inputGroupSubject} value={values[field.name]} error={errors[field.name]} onChange={handleChange} />    
                 }
                 return <InputText key={key} name={field.name} type={field.type} value={values[field.name]} error={errors[field.name]} onChange={handleChange} />
             })}

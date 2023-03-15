@@ -64,6 +64,12 @@
     gap: 0.5rem;
     width: 100%;
 }
+.inputGroupSubject{
+    grid-area: subject;
+}
+.inputGroupMessage{
+    grid-area: message;
+}
 .inputGroupError input, .inputGroupError textarea{
     outline: var(--color-red) solid 2px;
 }
@@ -115,13 +121,13 @@
         width: 100%;
     }
     .inputLabel{
-        font-size: 0.6rem;
+        font-size: 1.1vw;
     }
     .inputError{
-        font-size: 0.5rem;
+        font-size: 0.9vw;
     }
     .errorIcon{
-        width: 0.8rem;
+        width: 1.2vw;
         height: auto;
     }
 }

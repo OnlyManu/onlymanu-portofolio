@@ -3,7 +3,7 @@ import utils from '../../../styles/utils.module.css'
 
 export default function InputTextArea({ name, value, error, onChange }) {
     return (
-        <div className={error.status ? utils.inputGroup + " " + utils.inputGroupError : utils.inputGroup}>
+        <div className={error.status ? utils.inputGroup + " " + utils.inputGroupMessage + " " + utils.inputGroupError : utils.inputGroup + " " + utils.inputGroupMessage}>
             <label htmlFor={name} className={utils.inputLabel}>{name.length > 1 ? name[0].toUpperCase()+name.substring(1) : name}</label>
             <textarea name={name} className={styles.textarea} rows={7} value={value} onChange={onChange}></textarea>
             {error.status &&

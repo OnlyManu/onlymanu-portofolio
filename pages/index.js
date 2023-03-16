@@ -7,7 +7,6 @@ import { loadFull } from "tsparticles";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
 import Navbar from '../components/layouts/navbar/navbar'
 import Hero from '../components/layouts/hero/hero';
 import Heading from '../components/ui/heading/heading';
@@ -17,6 +16,7 @@ import ProjectList from '../components/layouts/projectList/projectList';
 import SkillList from '../components/layouts/skillList/skillList';
 import ContactForm from '../components/layouts/contactForm/contactForm';
 import SocialLinks from '../components/layouts/socialLinks/socialLinks';
+
 import styles from '../styles/home.module.css'
 import utils from '../styles/utils.module.css'
 
@@ -65,7 +65,7 @@ export default function Home() {
             },
             links: {
                 color: "#ffffff",
-                distance: 250,
+                distance: 300,
                 enable: true,
                 opacity: 0.2,
                 width: 1,
@@ -86,9 +86,9 @@ export default function Home() {
             number: {
                 density: {
                     enable: true,
-                    area: 900,
+                    area: 2000,
                 },
-                value: 40,
+                value: 80,
             },
             opacity: {
                 value: 0.2,

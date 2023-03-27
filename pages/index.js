@@ -77,7 +77,7 @@ export default function Home() {
                 directions: "none",
                 enable: true,
                 outModes: {
-                    default: "bounce",
+                    default: "out",
                 },
                 random: false,
                 speed: 2,
@@ -86,9 +86,9 @@ export default function Home() {
             number: {
                 density: {
                     enable: true,
-                    area: 2000,
+                    area: 1200,
                 },
-                value: 80,
+                value: 30,
             },
             opacity: {
                 value: 0.2,
@@ -137,9 +137,9 @@ export default function Home() {
                 <Hero />
                 <Particles
                     id="tsparticles"
-                    init={particlesInit}      
+                    init={particlesInit}
                     options={particlesOptions}
-                />      
+                />
             </header>
             <main>
                 <section className={styles.section} id="services">

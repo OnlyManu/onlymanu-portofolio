@@ -11,9 +11,6 @@
 .project:hover .projectName::after{
     width: 100%;    
 }
-.project:hover .moreIcon{
-    animation: more .8s ease;
-}
 .screenshotContainer{
     display: flex;
     flex-direction: column;
@@ -60,16 +57,6 @@
 .moreIcon{
     width: 1.4rem;
     height: auto;
-}
-
-@keyframes more {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(0.3rem);
-        opacity: 0;
-    }
 }
 
 @media screen and (min-width: 1024px) {

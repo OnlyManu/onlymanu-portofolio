@@ -13,7 +13,7 @@ export default function CardProject({ href, name, image, indice }) {
             <div className={styles.projectInfo}>
                 <span className={styles.projectName+" "+utils.headingCard2}>{name}</span>
                 <a className={styles.knowMore + " " + utils.textCardLink + " " + utils.colorBlue} href={href} target="_blank" rel='noreferrer'>
-                    <span>know more</span>
+                    <span>Preview site</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" className={styles.moreIcon+" "+utils.svgColorBlue}><path d="M44 24l-8-8v6H6v4h30v6z"/></svg>
                 </a>
             </div>

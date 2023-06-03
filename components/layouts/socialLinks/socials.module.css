@@ -13,6 +13,9 @@
 .socialLink:hover{
     transform: translateY(-0.1rem);
 }
+.socialLink:hover path {
+    fill: var(--color-blue)
+}
 .socialIcon{
     width: 1.5rem;
     height: auto;

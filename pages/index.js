@@ -10,6 +10,7 @@ import 'aos/dist/aos.css';
 import Navbar from '../components/layouts/navbar/navbar'
 import Hero from '../components/layouts/hero/hero';
 import Heading from '../components/ui/heading/heading';
+import HeaderFooter from '../components/ui/headerFooter/headerFooter';
 import ServiceList from '../components/layouts/serviceList/serviceList';
 import PersonalInfos from '../components/layouts/personalInfos/personalInfos';
 import ProjectList from '../components/layouts/projectList/projectList';
@@ -86,7 +87,7 @@ export default function Home() {
             number: {
                 density: {
                     enable: true,
-                    area: 1200,
+                    area: 1800,
                 },
                 value: 30,
             },
@@ -140,6 +141,7 @@ export default function Home() {
                     init={particlesInit}
                     options={particlesOptions}
                 />
+                <HeaderFooter />
             </header>
             <main>
                 <section className={styles.section} id="services">

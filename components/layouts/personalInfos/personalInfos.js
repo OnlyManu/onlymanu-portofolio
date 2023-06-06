@@ -25,7 +25,7 @@ export default function PersonalInfos() {
             </div>
             <div className={styles.bio+" "+utils.textBio} data-aos="fade-left">
                 <p className={styles.greeting}>Hi there.</p>
-                <p>What do you need to know about me?<br/>I&apos;m Emmanuel Bli, I&apos;m from Ivory Coast and since my childhood I was very passionated about technology. My love of technology lead me into programming and I had a computer science degree. Apart from my diploma, I&apos;m also a self-taught man always learning new stuff to expand his skills.</p>
+                <p>What do you need to know about me?<br/>I&apos;m Emmanuel Bli, I&apos;m from Ivory Coast and since my childhood I was very passionated about technology. My love of technology lead me into programming and I have had a computer science degree. Apart from my diploma, I&apos;m also a self-taught man always learning new stuffs to expand his skills.</p>
                 <p>Why should you entrust me with your project?<br/>I&apos;m someone who puts it heart in every job he does. Punctuality and seriousness are my virtues, I make a point of finishing correctly my work on time.</p>
                 <p>I&apos;m looking forward to working with you.</p>
             </div>

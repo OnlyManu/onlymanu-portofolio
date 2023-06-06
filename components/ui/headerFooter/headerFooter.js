@@ -29,7 +29,7 @@ export default function HeaderFooter() {
     } else {
         return (
             <svg className={styles.container} width="1440" height="100" viewBox="0 0 1440 100">
-                <path fill="#1a252b" d="M1440 76.067v31.044H0V76.728c218.83 16.574 460.97 25.783 715.67 25.783 258.07 0 503.24-9.451 724.33-26.444z"/>
+                <path fill="#1a252b" d="M1440 42.734v64.377H0V44.102c218.83 34.373 460.97 53.469 715.67 53.469 258.07 0 503.24-19.599 724.33-54.837z"/>
             </svg>
         )
     }

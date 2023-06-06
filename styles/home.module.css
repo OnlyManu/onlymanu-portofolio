@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   flex-direction: column;  
-  height: 104vh;
+  height: 105vh;
   background: linear-gradient(to right,rgba(27, 38, 45, 0.85), rgba(27, 38, 45, 0.85)),url("/images/heroImage.jpg") top center/cover no-repeat;
   padding: 1.2rem 0;
   overflow: hidden;

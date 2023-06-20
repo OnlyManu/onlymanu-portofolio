@@ -58,7 +58,7 @@ export default function SkillList() {
         <div className={styles.skills}>
             {
                 skills.map((skill, key) => (
-                    <div key={key} className={styles.skill} duration={1200} data-aos={ (key + 1) % 2 === 0 ? "flip-right" : "flip-left"}>
+                    <div key={key} className={styles.skill} data-aos={ (key + 1) % 2 === 0 ? "flip-right" : "flip-left"}>
                         <div className={styles.skillIcon}>
                             {skill.icon}
                         </div>

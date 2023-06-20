@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   flex-direction: column;  
-  height: 105vh;
+  height: 102vh;
   background: linear-gradient(to right,rgba(27, 38, 45, 0.85), rgba(27, 38, 45, 0.85)),url("/images/heroImage.jpg") top center/cover no-repeat;
   padding: 1.2rem 0;
   overflow: hidden;
@@ -84,6 +84,7 @@
 @media screen and (min-width: 1024px) {
   .header{
     padding: 0.3rem 0;
+    height: 105vh;
   }
   .section{
     padding-left: 10vw;

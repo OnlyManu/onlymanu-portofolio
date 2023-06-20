@@ -17,11 +17,11 @@ export default function PersonalInfos() {
             <div className={styles.picture} data-aos="fade-right">
                 <Image src='/images/profile.png' className={styles.profilePicture} height={602} width={476} alt='Emmanuel Bli' />
             </div>
-            <div className={styles.infos} data-aos="fade-left">
-                <Info name="Name" content="Emmanuel Bli" />
-                <Info name="Age" content={getAge()} />
-                <Info name="Email" content="devonlymanu@gmail.com" />
-                <Info name="Phone" content="(+225) 01 711 93 710" />
+            <div className={styles.infos} >
+                <Info name="Name" content="Emmanuel Bli" index={1} />
+                <Info name="Age" content={getAge()} index={2} />
+                <Info name="Email" content="devonlymanu@gmail.com" index={3} />
+                <Info name="Phone" content="(+225) 01 711 93 710" index={4} />
             </div>
             <div className={styles.bio+" "+utils.textBio} data-aos="fade-left">
                 <p className={styles.greeting}>Hi there.</p>

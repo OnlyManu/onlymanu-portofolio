@@ -110,10 +110,10 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>{ "OnlyManu Portofolio" }</title>
+                <title>{ "OnlyManu Portfolio" }</title>
                 <meta
                     name="description"
-                    content="Onlymanu portofolio - freelance developer"
+                    content="Onlymanu portfolio - freelance developer"
                 />
                 <meta
                     property="og:title"

@@ -124,62 +124,63 @@ export default function ContactForm() {
       method="POST"
       className={styles.contact + " " + utils.bgColorLight}
       onSubmit={handleSubmit}
-      data-aos="flip-down"
     >
-      {fields.map((field, key) => {
-        if (field.field === "textarea") {
-          return (
-            <InputTextArea
-              key={key}
-              name={field.name}
-              value={values[field.name]}
-              error={errors[field.name]}
-              onChange={handleChange}
-            />
-          );
-        }
-        if (field.name === "subject") {
+      <div className={styles.fieldWrapper} data-aos="fade">
+        {fields.map((field, key) => {
+          if (field.field === "textarea") {
+            return (
+              <InputTextArea
+                key={key}
+                name={field.name}
+                value={values[field.name]}
+                error={errors[field.name]}
+                onChange={handleChange}
+              />
+            );
+          }
+          if (field.name === "subject") {
+            return (
+              <InputText
+                key={key}
+                name={field.name}
+                type={field.type}
+                additionnalClass={utils.inputGroupSubject}
+                value={values[field.name]}
+                error={errors[field.name]}
+                onChange={handleChange}
+              />
+            );
+          }
           return (
             <InputText
               key={key}
               name={field.name}
               type={field.type}
-              additionnalClass={utils.inputGroupSubject}
               value={values[field.name]}
               error={errors[field.name]}
               onChange={handleChange}
             />
           );
-        }
-        return (
-          <InputText
-            key={key}
-            name={field.name}
-            type={field.type}
-            value={values[field.name]}
-            error={errors[field.name]}
-            onChange={handleChange}
-          />
-        );
-      })}
+        })}
 
-      <button
-        className={
-          isLoading
-            ? styles.submitButton +
-              " " +
-              utils.bgColorBlue +
-              " " +
-              styles.loading
-            : styles.submitButton + " " + utils.bgColorBlue
-        }
-      >
-        <div className={styles.buttonSpinner}></div>
-        <span className={styles.buttonText}>Send message</span>
-      </button>
-      <AlertBox isOpen={alertState} onClick={openCloseAlert}>
-        the message was send with success
-      </AlertBox>
+        <button
+          className={
+            isLoading
+              ? styles.submitButton +
+                " " +
+                utils.bgColorBlue +
+                " " +
+                styles.loading
+              : styles.submitButton + " " + utils.bgColorBlue
+          }
+        >
+          <div className={styles.buttonSpinner}></div>
+          <span className={styles.buttonText}>Send message</span>
+        </button>
+        <AlertBox isOpen={alertState} onClick={openCloseAlert}>
+          the message was send with success
+        </AlertBox>
+      </div>
     </form>
   );
 }

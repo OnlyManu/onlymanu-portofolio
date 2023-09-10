@@ -1,134 +1,185 @@
-import { useState, useRef } from 'react'
-import sendMail from '../../../lib/mailer'
+import {useState, useRef} from "react";
+import sendMail from "../../../lib/mailer";
 
-import InputText from '../../ui/inputText/inputText'
-import InputTextArea from '../../ui/inputTextArea/inputTextArea'
-import AlertBox from '../../ui/alertBox/alertBox'
+import InputText from "../../ui/inputText/inputText";
+import InputTextArea from "../../ui/inputTextArea/inputTextArea";
+import AlertBox from "../../ui/alertBox/alertBox";
 
-import styles from './contact.module.css'
-import utils from '../../../styles/utils.module.css'
-
+import styles from "./contact.module.css";
+import utils from "../../../styles/utils.module.css";
 
 const fields = [
-    {field:"text", name: "name", type:"text"},
-    { field: "text", name: "email", type: "email" },
-    {field:"text", name: "subject", type:"text"},
-    {field:"textarea", name: "message"}
-]
+  {field: "text", name: "name", type: "text"},
+  {field: "text", name: "email", type: "email"},
+  {field: "text", name: "subject", type: "text"},
+  {field: "textarea", name: "message"},
+];
 
 const generateFormData = () => {
-    let fieldsValues = {}
-    fields.forEach(field => {
-        fieldsValues[field.name] = ""
-    })
-    return fieldsValues;
-}
+  let fieldsValues = {};
+  fields.forEach((field) => {
+    fieldsValues[field.name] = "";
+  });
+  return fieldsValues;
+};
 
-const generateErrorStatus = () => {    
-    let fieldsErrorStatus = {}
-    fields.forEach(field => {
-        fieldsErrorStatus[field.name] = {status: false, message: ""}
-    })
-    return fieldsErrorStatus
-}
+const generateErrorStatus = () => {
+  let fieldsErrorStatus = {};
+  fields.forEach((field) => {
+    fieldsErrorStatus[field.name] = {status: false, message: ""};
+  });
+  return fieldsErrorStatus;
+};
 
-const initialDataState = { values: generateFormData() }
-const initialErrorState = generateErrorStatus()
+const initialDataState = {values: generateFormData()};
+const initialErrorState = generateErrorStatus();
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState(initialDataState)
-    const [errors, setError] = useState(initialErrorState)
-    const [alertState, setAlertState] = useState(false)
+  const [formData, setFormData] = useState(initialDataState);
+  const [errors, setError] = useState(initialErrorState);
+  const [alertState, setAlertState] = useState(false);
 
-    const { values, isLoading } = formData
-    
-    const setInputError = (input, status, message) => {
-        setError(errors => ({
-            ...errors,
-            [input]: { status: status, message: message }
-        }))
+  const {values, isLoading} = formData;
+
+  const setInputError = (input, status, message) => {
+    setError((errors) => ({
+      ...errors,
+      [input]: {status: status, message: message},
+    }));
+  };
+  const openCloseAlert = () => {
+    setAlertState((alertState) => !alertState);
+  };
+
+  const handleChange = ({target}) => {
+    setFormData((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: target.value,
+      },
+    }));
+    setInputError(target.name, false, "");
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setFormData((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
+
+    if (verifyFormData()) {
+      const response = await sendMail(values);
+      if (response === "success") {
+        resetFormData();
+        openCloseAlert();
+      }
     }
-    const openCloseAlert = () => {
-        setAlertState(alertState => !alertState)
-    } 
 
-    const handleChange = ({target}) => {
-        setFormData((prev) => ({
-            ...prev,
-            values: {
-                ...prev.values,
-                [target.name] : target.value
-            },
-        }))
-        setInputError(target.name, false, '')
-    }
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        
-        setFormData((prev) => ({
-            ...prev,
-            isLoading: true
-        }))
+    setFormData((prev) => ({
+      ...prev,
+      isLoading: false,
+    }));
+  };
 
-        if (verifyFormData()) {
-            const response = await sendMail(values)
-            if (response === 'success') {
-                resetFormData()
-                openCloseAlert()                
-            }   
+  const verifyFormData = () => {
+    const inputs = Object.keys(values);
+    let isError = false;
+
+    inputs.forEach((input) => {
+      if (input === "email") {
+        if (values[input]) {
+          const mailReg =
+            /^(([^<>()\\.,;:\s@"]+(\.[^<>()\\.,;:\s@"]+)*)|(".+"))@(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
+          mailReg.test(values[input])
+            ? setInputError(input, false, "")
+            : (setInputError(input, true, "enter a correct email adress"),
+              (isError = true));
+        } else {
+          setInputError(input, true, "this field is required");
+          isError = true;
         }
+      } else {
+        values[input]
+          ? setInputError(input, false, "")
+          : (setInputError(input, true, "this field is required"),
+            (isError = true));
+      }
+    });
+    return !isError;
+  };
 
-        setFormData((prev) => ({
-            ...prev,
-            isLoading: false
-        }))
-    }
+  const resetFormData = () => {
+    const resetValues = generateFormData();
+    setFormData((prev) => ({
+      ...prev,
+      values: resetValues,
+    }));
+  };
 
-    const verifyFormData = () => {
-        const inputs = Object.keys(values)
-        let isError = false
+  return (
+    <form
+      method="POST"
+      className={styles.contact + " " + utils.bgColorLight}
+      onSubmit={handleSubmit}
+      data-aos="flip-down"
+    >
+      {fields.map((field, key) => {
+        if (field.field === "textarea") {
+          return (
+            <InputTextArea
+              key={key}
+              name={field.name}
+              value={values[field.name]}
+              error={errors[field.name]}
+              onChange={handleChange}
+            />
+          );
+        }
+        if (field.name === "subject") {
+          return (
+            <InputText
+              key={key}
+              name={field.name}
+              type={field.type}
+              additionnalClass={utils.inputGroupSubject}
+              value={values[field.name]}
+              error={errors[field.name]}
+              onChange={handleChange}
+            />
+          );
+        }
+        return (
+          <InputText
+            key={key}
+            name={field.name}
+            type={field.type}
+            value={values[field.name]}
+            error={errors[field.name]}
+            onChange={handleChange}
+          />
+        );
+      })}
 
-        inputs.forEach(input => {
-            if (input === 'email') {
-                if (values[input]) {
-                    /^.+@\w+\.\w{2,8}$/.test(values[input]) ? setInputError(input, false, '') : (setInputError(input, true, 'enter a correct email adress'), isError = true)
-                } else {
-                    setInputError(input, true, 'this field is required')
-                    isError = true
-                }
-            } else {
-                values[input] ? setInputError(input, false, '') : (setInputError(input, true, 'this field is required'), isError = true)
-            }
-        })
-        return !isError
-    }
-
-    const resetFormData = () => {
-        const resetValues = generateFormData()
-        setFormData((prev) => ({
-            ...prev,
-            values: resetValues
-        }))
-    }
-
-    return (
-        <form method='POST' className={styles.contact + " " + utils.bgColorLight} onSubmit={handleSubmit} data-aos="flip-down">
-            {fields.map((field, key) => {
-                if (field.field === "textarea") {
-                    return <InputTextArea key={key} name={field.name} value={values[field.name]} error={errors[field.name]} onChange={handleChange} />
-                }
-                if (field.name === "subject") {
-                    return <InputText key={key} name={field.name} type={field.type} additionnalClass={utils.inputGroupSubject} value={values[field.name]} error={errors[field.name]} onChange={handleChange} />    
-                }
-                return <InputText key={key} name={field.name} type={field.type} value={values[field.name]} error={errors[field.name]} onChange={handleChange} />
-            })}
-
-            <button className={isLoading ? styles.submitButton + " " + utils.bgColorBlue + " " + styles.loading : styles.submitButton + " " + utils.bgColorBlue}>
-                <div className={styles.buttonSpinner}></div>
-                <span className={styles.buttonText}>Send message</span>
-            </button>
-            <AlertBox isOpen={alertState} onClick={openCloseAlert}>the message was send with success</AlertBox>
-        </form>
-    )
+      <button
+        className={
+          isLoading
+            ? styles.submitButton +
+              " " +
+              utils.bgColorBlue +
+              " " +
+              styles.loading
+            : styles.submitButton + " " + utils.bgColorBlue
+        }
+      >
+        <div className={styles.buttonSpinner}></div>
+        <span className={styles.buttonText}>Send message</span>
+      </button>
+      <AlertBox isOpen={alertState} onClick={openCloseAlert}>
+        the message was send with success
+      </AlertBox>
+    </form>
+  );
 }

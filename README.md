@@ -50,7 +50,7 @@ This is a my portofolio website.
 ```bash
 npm instal
 # or
-yarn install
+yarn
 ```
 
 - Run the development server:

@@ -66,7 +66,7 @@ export default function Home() {
       },
       links: {
         color: "#ffffff",
-        distance: 200,
+        distance: 150,
         enable: true,
         opacity: 0.2,
         width: 1,

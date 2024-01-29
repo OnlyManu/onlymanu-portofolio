@@ -24,7 +24,7 @@ import utils from "../styles/utils.module.css";
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      once: true,
+      once: false,
       easing: "ease-in-out",
       duration: 800,
     });

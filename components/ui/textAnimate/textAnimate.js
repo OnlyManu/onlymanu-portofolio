@@ -1,4 +1,4 @@
-import {Component, useReducer, useEffect} from "react";
+import { Component, useReducer, useEffect } from "react";
 import styles from "./textAnimate.module.css";
 
 const titles = ["web developer", "mobile app developer", "seo expert"];
@@ -19,7 +19,7 @@ function reducer(state, action) {
       const limit = state.curText.length + 1;
       const count = state.letterCount + 1;
       if (count > state.textLength + 15) {
-        return {...state, direction: "left", letterCount: 0};
+        return { ...state, direction: "left", letterCount: 0 };
       } else if (limit <= state.textLength + 1) {
         return {
           ...state,
@@ -27,7 +27,7 @@ function reducer(state, action) {
           letterCount: count,
         };
       } else {
-        return {...state, letterCount: count};
+        return { ...state, letterCount: count };
       }
     }
     case "remove": {
@@ -45,7 +45,7 @@ function reducer(state, action) {
           direction: "right",
         };
       } else {
-        return {...state, curText: state.text.substring(0, limit)};
+        return { ...state, curText: state.text.substring(0, limit) };
       }
     }
   }
@@ -57,9 +57,9 @@ export default function TextAnimate() {
   useEffect(() => {
     const timer = setInterval(function () {
       if (state.direction === "right") {
-        dispatch({type: "add"});
+        dispatch({ type: "add" });
       } else {
-        dispatch({type: "remove"});
+        dispatch({ type: "remove" });
       }
     }, 100);
     return () => {

@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.1rem;
-    height: 100%;
+    height: 90svh;
     width: 100%;
 }
 .heroTextLight{
@@ -64,6 +64,7 @@
 @media screen and (min-width: 1024px) {
     .hero{
         gap: 0.1rem;
+        height: 85vh;
     }
     .heroTextLarge {
         font-size: 1.8rem;

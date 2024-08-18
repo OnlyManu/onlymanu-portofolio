@@ -10,7 +10,7 @@
 .content{
     font-size: 0.78rem;
     font-weight: 400;
-    color: #bdbdbd;
+    color: var(--color-dark-white);
 }
 
 @media screen and (min-width: 1024px) {

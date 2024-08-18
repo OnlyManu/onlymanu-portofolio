@@ -9,9 +9,11 @@
     display: flex;
     text-decoration: none;
     transition: transform .1s;
+    border-radius: 50%;
 }
 .socialLink:hover{
     transform: translateY(-0.1rem);
+    box-shadow: 0px 0px 10px var(--color-blue);
 }
 .socialLink:hover path {
     fill: var(--color-blue)
@@ -21,8 +23,19 @@
     height: auto;
 }
 
+@media screen and (min-width: 768px) {
+    .socialIcon {
+        width: 1.8rem;
+        height: auto;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .socials{
         grid-gap: 0.7rem;
+    }
+    .socialIcon {
+        width: 1.8rem;
+        height: auto;
     }
 }

@@ -1,9 +1,9 @@
 .input{
     border: none;
-    background-color: #d3d3d3;
+    background-color: #d0d3d4;
     width: 100%;
     padding: 0.2rem;
-    height: 2rem;
+    height: 2.2rem;
     border-radius: 5px;
     font-size: 0.9rem;
 }
@@ -16,10 +16,17 @@
     outline: var(--color-blue) solid 2px;
 }
 
+@media screen and (min-width: 768px) {
+    .input{
+        height: 2.2rem;
+        font-size: 0.8rem;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .input{
-        height: 7vh;
-        font-size: 1.4vw;
+        height: 10vh;
+        font-size: 1.3vw;
     }
     .input:focus-visible{
         outline: var(--color-blue) solid 3px;

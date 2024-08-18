@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+}
+.wave{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    transform: translateY(10px);
+}

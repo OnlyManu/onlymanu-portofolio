@@ -1,16 +1,25 @@
 .contact{
     display: flex;
-    border-radius: 6px;
+    flex-direction: column;
     width: 100%;
     overflow: hidden;
+}
+
+.heading {
+    font-size: 0.8rem;
+    color: var(--color-dark-white);
+    text-align: center;
+    align-self: center;
+    width: 18rem;
+    padding-bottom: 2.6rem;
 }
 
 .fieldWrapper {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
     width: 100%;
+    padding: 0px 5px;
 }
 
 .submitButton{
@@ -20,6 +29,7 @@
     border: none;
     width: 100%;
     height: 2.8rem;
+    margin-top: 0.3rem;
     border-radius: 4px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -27,6 +37,7 @@
 }
 .submitButton:hover{
     background-color: var(--color-blue-transparent) !important;
+    box-shadow: 0px 0px 10px var(--color-blue);
 }
 .submitButton .buttonSpinner{
     display: none;
@@ -70,14 +81,9 @@
     }
 }
 
-@media screen and (min-width: 768px) {
-    .fieldWrapper{
-        gap: 1.5rem;
-    }
-}
 @media screen and (min-width: 1024px) {
     .contact {
-        width: 58%;
+        margin-bottom: 4vw;
     }
     .fieldWrapper{
         display: grid;
@@ -86,14 +92,14 @@
                              "subject subject"
                              "message message"
                              "submit submit";
-        gap: 4vh;
-        padding: 4vh;
+        gap: 3.2vw;
     }
     .submitButton{
         grid-area: submit;
         font-size: 1.4vw;
-        justify-self: center;
-        width: 100%;
+        justify-self: right;
+        width: 22%;
         height: 4.8vw;
+        margin-top: 0.6rem;
     }
 }

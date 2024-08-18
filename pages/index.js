@@ -1,9 +1,9 @@
 import Head from "next/head";
-import {useEffect} from "react";
+import { useEffect } from "react";
 
-import {useCallback} from "react";
+import { useCallback } from "react";
 import Particles from "react-particles";
-import {loadFull} from "tsparticles";
+import { loadFull } from "tsparticles";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -11,6 +11,8 @@ import Navbar from "../components/layouts/navbar/navbar";
 import Hero from "../components/layouts/hero/hero";
 import Heading from "../components/ui/heading/heading";
 import HeaderFooter from "../components/ui/headerFooter/headerFooter";
+import SectionFooter from "../components/ui/sectionFooter/sectionFooter";
+import SectionFooterLight from "../components/ui/sectionFooterLight/sectionFooterLight";
 import ServiceList from "../components/layouts/serviceList/serviceList";
 import PersonalInfos from "../components/layouts/personalInfos/personalInfos";
 import ProjectList from "../components/layouts/projectList/projectList";
@@ -113,7 +115,7 @@ export default function Home() {
         },
       },
       size: {
-        value: {min: 1, max: 3},
+        value: { min: 1, max: 3 },
       },
     },
     detectRetina: true,
@@ -157,6 +159,7 @@ export default function Home() {
           <Heading>My services</Heading>
           <ServiceList />
         </section>
+        <SectionFooter />
         <section
           className={styles.section + " " + utils.bgColorLight}
           id="about"
@@ -164,10 +167,12 @@ export default function Home() {
           <Heading>About me</Heading>
           <PersonalInfos />
         </section>
+        <SectionFooterLight />
         <section className={styles.section} id="works">
           <Heading>My works</Heading>
           <ProjectList />
         </section>
+        <SectionFooter />
         <section
           className={styles.section + " " + utils.bgColorLight}
           id="skills"
@@ -175,13 +180,17 @@ export default function Home() {
           <Heading>My skills</Heading>
           <SkillList />
         </section>
-        <section className={styles.section} id="contact">
+        <SectionFooterLight />
+        <section className={styles.sectionContact} id="contact">
           <Heading>Contact me</Heading>
           <ContactForm />
         </section>
+        <SectionFooter />
       </main>
       <footer className={styles.footer}>
-        <div className={styles.license}>©copyright 2022 OnlyManu</div>
+        <div className={styles.license}>
+          <span className={utils.colorBlue}>©</span>copyright 2022 OnlyManu
+        </div>
         <SocialLinks />
       </footer>
     </div>

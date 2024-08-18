@@ -1,4 +1,4 @@
-import {useState, useRef} from "react";
+import { useState, useRef } from "react";
 import sendMail from "../../../lib/mailer";
 
 import InputText from "../../ui/inputText/inputText";
@@ -9,10 +9,10 @@ import styles from "./contact.module.css";
 import utils from "../../../styles/utils.module.css";
 
 const fields = [
-  {field: "text", name: "name", type: "text"},
-  {field: "text", name: "email", type: "email"},
-  {field: "text", name: "subject", type: "text"},
-  {field: "textarea", name: "message"},
+  { field: "text", name: "name", type: "text" },
+  { field: "text", name: "email", type: "email" },
+  { field: "text", name: "subject", type: "text" },
+  { field: "textarea", name: "message" },
 ];
 
 const generateFormData = () => {
@@ -26,12 +26,12 @@ const generateFormData = () => {
 const generateErrorStatus = () => {
   let fieldsErrorStatus = {};
   fields.forEach((field) => {
-    fieldsErrorStatus[field.name] = {status: false, message: ""};
+    fieldsErrorStatus[field.name] = { status: false, message: "" };
   });
   return fieldsErrorStatus;
 };
 
-const initialDataState = {values: generateFormData()};
+const initialDataState = { values: generateFormData() };
 const initialErrorState = generateErrorStatus();
 
 export default function ContactForm() {
@@ -39,19 +39,19 @@ export default function ContactForm() {
   const [errors, setError] = useState(initialErrorState);
   const [alertState, setAlertState] = useState(false);
 
-  const {values, isLoading} = formData;
+  const { values, isLoading } = formData;
 
   const setInputError = (input, status, message) => {
     setError((errors) => ({
       ...errors,
-      [input]: {status: status, message: message},
+      [input]: { status: status, message: message },
     }));
   };
   const openCloseAlert = () => {
     setAlertState((alertState) => !alertState);
   };
 
-  const handleChange = ({target}) => {
+  const handleChange = ({ target }) => {
     setFormData((prev) => ({
       ...prev,
       values: {
@@ -120,11 +120,11 @@ export default function ContactForm() {
   };
 
   return (
-    <form
-      method="POST"
-      className={styles.contact + " " + utils.bgColorLight}
-      onSubmit={handleSubmit}
-    >
+    <form method="POST" className={styles.contact} onSubmit={handleSubmit}>
+      <span className={styles.heading}>
+        Don&apos;t let your project wait, Contact me today for a free,
+        personalized quote!
+      </span>
       <div className={styles.fieldWrapper} data-aos="fade">
         {fields.map((field, key) => {
           if (field.field === "textarea") {

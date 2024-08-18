@@ -11,12 +11,6 @@
     border-radius: 6px;
     transition: all .3s;
 }
-.serviceSelected{
-    background-color: #3282b8 !important;
-}
-.serviceSelected path{
-    fill: #ffffff !important;
-}
 
 @media screen and (min-width: 1024px) {
     .service{

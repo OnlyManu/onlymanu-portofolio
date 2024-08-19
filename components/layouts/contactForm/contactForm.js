@@ -75,6 +75,8 @@ export default function ContactForm() {
       if (response === "success") {
         resetFormData();
         openCloseAlert();
+      } else {
+        console.log(response);
       }
     }
 

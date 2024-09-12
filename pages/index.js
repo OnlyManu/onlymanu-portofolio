@@ -12,7 +12,6 @@ import Hero from "../components/layouts/hero/hero";
 import Heading from "../components/ui/heading/heading";
 import HeaderFooter from "../components/ui/headerFooter/headerFooter";
 import SectionFooter from "../components/ui/sectionFooter/sectionFooter";
-import SectionFooterLight from "../components/ui/sectionFooterLight/sectionFooterLight";
 import ServiceList from "../components/layouts/serviceList/serviceList";
 import PersonalInfos from "../components/layouts/personalInfos/personalInfos";
 import ProjectList from "../components/layouts/projectList/projectList";
@@ -167,7 +166,7 @@ export default function Home() {
           <Heading>About me</Heading>
           <PersonalInfos />
         </section>
-        <SectionFooterLight />
+        <SectionFooter light={true} />
         <section className={styles.section} id="works">
           <Heading>My works</Heading>
           <ProjectList />
@@ -180,7 +179,7 @@ export default function Home() {
           <Heading>My skills</Heading>
           <SkillList />
         </section>
-        <SectionFooterLight />
+        <SectionFooter light={true} />
         <section className={styles.sectionContact} id="contact">
           <Heading>Contact me</Heading>
           <ContactForm />

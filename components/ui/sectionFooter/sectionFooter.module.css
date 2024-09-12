@@ -8,3 +8,9 @@
     margin: 0;
     transform: translateY(10px);
 }
+
+.container_light {
+    display: flex;
+    background-color: var(--color-light-blue);
+    transform: translateY(-2px);
+}

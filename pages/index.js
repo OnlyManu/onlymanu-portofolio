@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 import { useCallback } from "react";
 import Particles from "react-particles";
+import Scrollbar from "smooth-scrollbar";
+import OverscrollPlugin from "smooth-scrollbar/dist/plugins/overscroll";
 import { loadFull } from "tsparticles";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -23,16 +25,6 @@ import styles from "../styles/home.module.css";
 import utils from "../styles/utils.module.css";
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      once: false,
-      easing: "ease-in-out",
-      duration: 800,
-    });
-    const loader = document.getElementById("loader");
-    loader.style.display = "none";
-  }, []);
-
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
@@ -124,8 +116,51 @@ export default function Home() {
     },
   };
 
+  const scrollbarOptions = {
+    damping: 0.06,
+    plugins: {
+      overscroll: {
+        enable: true,
+        effect: "glow",
+        damping: 0.15,
+        maxOverscroll: 150,
+        glowColor: "#c5e5f2",
+      },
+    },
+  };
+
+  useEffect(() => {
+    AOS.init({
+      once: false,
+      easing: "ease-in-out",
+      duration: 700,
+    });
+
+    Scrollbar.use(OverscrollPlugin);
+    const myScrollbar = Scrollbar.init(
+      document.querySelector("#my-scrollbar"),
+      scrollbarOptions
+    );
+    [].forEach.call(document.querySelectorAll("[data-aos]"), (el) => {
+      myScrollbar.addListener(() => {
+        if (myScrollbar.isVisible(el)) {
+          el.classList.add("aos-animate");
+        }
+      });
+    });
+
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
+
+    return () => {
+      if (Scrollbar) {
+        myScrollbar.destroy();
+      }
+    };
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="my-scrollbar">
       <Head>
         <title>{"OnlyManu Portfolio"}</title>
         <meta

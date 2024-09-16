@@ -30,6 +30,9 @@ body{
 body.navigationOpen{
   overflow: hidden;
 }
+body.navigationOpen #my-scrollbar{
+  height: 100%;
+}
 
 a {
   color: inherit;

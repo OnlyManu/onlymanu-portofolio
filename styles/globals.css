@@ -98,9 +98,12 @@ a {
   html,
     body {
       font-size: 28px;
-    }
+  }
   body.navigationOpen{
     overflow: auto;
+  }
+  body.navigationOpen #my-scrollbar {
+    height: 100svh;
   }
   .sticky{
     padding-top: 0.2rem !important;

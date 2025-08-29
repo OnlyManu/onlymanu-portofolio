@@ -26,6 +26,7 @@ export default function Navbar() {
       return str.split("(")[1].split(")")[0].split(",");
     }
 
+    //code pour sticky navbar avec smooth-scrollbar incomplé
     /*container.addEventListener("transitionend", (event) => {
       const home = document.getElementById("home");
       const sections = document.querySelectorAll("section");
@@ -46,6 +47,7 @@ export default function Navbar() {
       setScrollPos(current_position);
     });*/
 
+    //ancien code pour la sticky navbar
     /*container.addEventListener(
       "scroll",
       () => {
